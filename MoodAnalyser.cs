@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace MoodAnalyser
 {
     /// <summary>
-    ///uc1 Analzing user mood based on happy or sad word.
+    ///uc2  handle exception if user mood invalid.
     /// </summary>
     public class MoodAnalysertest
     {
-        //Iam in Happy mood
+        //invalid mood 
         public string message;
         public MoodAnalysertest(string message)
         {
@@ -19,19 +19,30 @@ namespace MoodAnalyser
             this.message = message;
         }
 
+     
         //create Analyse method for analyser mood of the user
         public string AnalyseMood()
         {
-
-            if (message.ToLower().Contains("happy"))
+            try
+            {
+              /* if (message == string.Empty)
+                 {
+                      message = null;
+                      Console.WriteLine(message);
+                 } */
+                if (message.ToLower().Contains("happy"))
+                {
+                    return "happy";
+                }
+                else
+                {
+                    return "sad";
+                }
+            }
+            catch (Exception ex)
             {
                 return "happy";
             }
-            else
-            {
-                return "sad";
-            }
-
         }
         
     }

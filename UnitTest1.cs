@@ -37,7 +37,21 @@ namespace MoodAnalyser
             //Assert
             Assert.AreEqual(Expected, actuall);
         }
+        [TestMethod]
+        [TestCategory("negativesenario")]
+        public void GivenNullshouldbereturnhappy()
+        {
+            //AAA Methodology
+            //Arrange
+            string Expected = "happy";
+            MoodAnalysertest obj = new MoodAnalysertest(null);
 
+            //Act
+            string actuall = obj.AnalyseMood();
+            //Assert
+            Assert.AreEqual(Expected, actuall);
+
+        }
 
     }
 }
