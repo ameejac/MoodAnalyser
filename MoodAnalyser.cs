@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MoodAnalyser
 {
     /// <summary>
-    ///uc2  handle exception if user mood invalid.
+    ///uc3  user mood invalid.
     /// </summary>
     public class MoodAnalysertest
     {

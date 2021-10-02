@@ -7,5 +7,15 @@ namespace MoodAnalyser
 {
     public class CustomMoodAnalyserException:Exception
     {
+        public ExceptionType Exception;
+        public enum ExceptionType
+        {
+            Null_Type_Exception,
+            Empty_Type_Exception
+        }
+        public CustomMoodAnalyserException(ExceptionType type,string message): base(message)
+        {
+            this.Exception = type;
+        }
     }
 }

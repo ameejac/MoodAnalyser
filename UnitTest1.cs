@@ -52,6 +52,43 @@ namespace MoodAnalyser
             Assert.AreEqual(Expected, actuall);
 
         }
-
+        [TestMethod]
+        [TestCategory("customException")]
+        public void GivenNullMoodshouldthrowcustomnemptyException()
+        {
+            //AAA metodology
+            //Arrange
+            string Excepted = "message should not be empty";
+            MoodAnalysertest obj = new MoodAnalysertest(string.Empty);
+            try
+            {
+                //Act
+                string actuall = obj.AnalyseMood();
+            }
+            catch(CustomMoodAnalyserException Ex)
+            {
+                //Assert
+                Assert.AreEqual(Excepted, Ex);
+            }
+        }
+        [TestMethod]
+        [TestCategory("customException")]
+        public void GivenNullMoodshouldthrowcustomnullException()
+        {
+            //AAA metodology
+            //Arrange
+            string Excepted = "message should not be null";
+            MoodAnalysertest obj = new MoodAnalysertest(null);
+            try
+            {
+                //Act
+                string actuall = obj.AnalyseMood();
+            }
+            catch (CustomMoodAnalyserException Ex)
+            {
+                //Assert
+                Assert.AreEqual(Excepted, Ex);
+            }
+        }
     }
 }
